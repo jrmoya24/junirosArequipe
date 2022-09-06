@@ -3,38 +3,37 @@ const data = {
   items: [
     {
       id: 1,
-      title: "Nike LD Waffle Sacai Black Nylon",
-      price: 401,
+      Title: "Nike LD Waffle Sacai Black Nylon",
+      Price: 401,
       category: "nike",
       
-      cantidad: 1,
+      Cantidad: 1,
     },
     {
       id: 2,
-      title: "Nike Dunk Low Off-White Pine Green",
-      price: 304,
+      Title: "Nike Dunk Low Off-White Pine Green",
+      Price: 304,
       category: "nike",
      
-      cantidad: 1
+      Cantidad: 1
     },
     {
       id: 3,
-      title: "Nike Air Force 1 Low Supreme Black",
-      price: 475,
-
+      Title: "Nike Air Force 1 Low Supreme Black",
+      Price: 475,
       category: "nike",
       
-      cantidad: 1
+      Cantidad: 1
     },
     {
       id: 4,
-      title: "Nike LD Waffle Sacai White Nylon",
-      price: 399,
-      image: require('./images/img04.jpg'),
-      category: "nike",
+      Title: "Nike LD Waffle Sacai White Nylon",
+      Price: 399,
+      Image: require('./images/img04.jpg'),
+      Category: "nike",
       img1: "https://stockx-360.imgix.net/Nike-LD-Waffle-Sacai-White-Nylon/Images/Nike-LD-Waffle-Sacai-White-Nylon/Lv2/img",
       img2: ".jpg?auto=format,compress&q=90&updated_at=1606325338&w=1000",
-      cantidad: 1
+      Cantidad: 1
     },
     {
       id: 5,

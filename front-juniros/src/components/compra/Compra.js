@@ -5,7 +5,7 @@ import { DataContext } from "context/DataProvider";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
 
-const URI = "http://localhost:8000/compra/";
+//const URI = "http://localhost:8000/compra/";
 
 export const Compra = () => {
   const value = useContext(DataContext);
@@ -32,16 +32,16 @@ export const Compra = () => {
 
   const handleSubmit =async(e)=>{
     e.preventDefault()
-    await axios.post(URI, JSON.stringify (value.carrito))
+    await axios.post("http://localhost:8000/compra/",  value.carrito)
     .then(response=>{
-      setCarrito( value.carrito.concat(response.data))
+      console.log(response)
       })
-      console.log("esto es lo que hay en BSSS " +  JSON.stringify (value.carrito) );
-      setCarrito({
-        title: '',
-         price: '',
-       cantidad: 0
-      })
+
+      
+     
+      //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
+      
+      
   }
   
   
