@@ -5,9 +5,9 @@ import {  DataTypes } from "sequelize";
 
 const BlogModel = db.define('productos',{
     id :  { type: DataTypes.NUMBER,  primaryKey: true } , 
-    Title: { type: DataTypes.STRING },
-    Cantidad: { type: DataTypes.NUMBER },
-    Price:{ type: DataTypes.NUMBER }
+    title: { type: DataTypes.STRING },
+    cantidad: { type: DataTypes.NUMBER },
+    price:{ type: DataTypes.NUMBER }
 },{
     timestamps: false
 });
