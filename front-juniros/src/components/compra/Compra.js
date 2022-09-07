@@ -4,6 +4,8 @@ import Typography from "@mui/material/Typography";
 import { DataContext } from "context/DataProvider";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
+import Swal from 'sweetalert2'
+
 
 //const URI = "http://localhost:8000/compra/";
 
@@ -12,36 +14,40 @@ export const Compra = () => {
   const [carrito, setCarrito] = value.carrito;
   const [total] = value.total;
 
+
   const [producto, setProducto] = useState({
     title: '',
     price: '',
     cantidad: 0
   })
-  // Procedimiento enviar datos a la base de datos
-//console.log ( JSON.stringify (value.carrito))
- /* useEffect(() => {
-   
-    
-   
-  }, [])*/
-  
- /* const handleSubmit =  () => {
-     axios.post(URI, JSON.stringify (value.carrito));
-    console.log("esto es lo que hay en BSSS " +  JSON.stringify (value.carrito) );
-  };*/
 
+
+//const obj = Object.assign({}, carrito);
+//console.log ( JSON.stringify (value.carrito))
+//console.log(carrito);
+  
+
+  const mostrarAlerta =  () =>  {
+    
+    Swal.fire({
+      title: 'Se ha generado su pedido',
+      text: 'En un tiempo estimado de 30 min, nos estaremos comunicando.',
+      icon: 'success',
+      button: 'Aceptar'
+    })
+    
+  }
+  
+// Procedimiento enviar datos a la base de datos
   const handleSubmit =async(e)=>{
     e.preventDefault()
-    await axios.post("http://localhost:8000/compra/",  value.carrito)
+    await axios.post("http://localhost:8000/compra/", carrito)
     .then(response=>{
-      console.log(response)
-      })
+      console.log(response);
+      console.log(response.data);
+    })
 
-      
-     
       //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
-      
-      
   }
   
   
@@ -74,7 +80,7 @@ export const Compra = () => {
         <Typography variant="h4" gutterBottom>
           Informacion de envio.
         </Typography>
-        <form ref={form} onSubmit={ handleSubmit }>
+        <form ref={form} >
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <div class="campo">
@@ -212,7 +218,7 @@ export const Compra = () => {
               </table>
             </div>
             <Grid item xs={12} sm={8}>
-              <button type="submit"> Comprar </button>
+              <button type="submit" > Comprar </button>
             </Grid>
           </Grid>
         </form>

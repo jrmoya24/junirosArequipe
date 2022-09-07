@@ -20,7 +20,7 @@ body{
 /*Variables definidas*/
 
 :root {
-    --colorPrincipal: #fda702;
+    --colorPrincipal: #ff8221;
     --colorSecundario: #ebeff2;
     --colorTexto: #02171d;
     --bgColor: #fff;
@@ -53,6 +53,9 @@ code {
   text-decoration: none;
   transition: .5s;
 }
+.btnn:hover{
+  color: var(--bgColor);
+}
 /*-----------------INICIO-------------------*/
 .home{
     width: 100%;
@@ -61,7 +64,9 @@ code {
     grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
     align-items: center;
     gap: 1.5rem;
-    background: var(--colorSecundario);
+    background-image: url("./images/bg.png") ;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .home-text{
     justify-content: center;
@@ -105,6 +110,92 @@ margin-bottom: 1rem;
     width: 75%;
     margin: 15rem auto;
 }
+
+/*! <--------- Features Section --------->*/
+
+.features {
+    padding: 40px 30px;
+    width: 100%;
+    margin: 5rem auto;
+  }
+  
+  .feature__title {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    font-family: var(--font-poppins);
+    color: var(--secondary-black);
+    margin-bottom: 80px;
+  }
+  
+  .features__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 44px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+    transition: all 0.2s;
+  }
+  
+  .features__content-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 160px;
+    padding: 26px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: var(--bgColor);
+    border: 1px solid rgba(221, 221, 221, 0.568);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+  }
+  
+  .features__content-card:hover {
+    background-color: #ff812163;
+  }
+  
+  .features__content-card:hover .title-card,
+  .features__content-card:hover .description-card,
+  .features__content-card:hover .icon-card {
+    color: var(--background-white);
+  }
+  
+
+
+ 
+
+  .features .features__content box-icon{
+    width: 38px;
+    height: 38px;
+    padding: 1px;
+    margin-bottom: 15px;
+    fill: var(--colorPrincipal);
+    
+  }
+  
+  .features__content h3 {
+    font-size: 20px;
+    font-weight: 600;
+    font-family: var(--font-poppins);
+    color: var(--secondary-black);
+    margin-bottom: 10px;
+  }
+  
+  .features__content p {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    
+    color: var(--colorTexto);
+    margin-bottom: 10px;
+  }
+  
 
 
 /*Acceso usuario*/
@@ -159,6 +250,167 @@ font-weight: 500;
 .user.show {
   left: 85rem;
   transition: 0.2s;
+}
+
+/*vista crear producto*/
+
+
+.showCreate{
+  right: -96rem;
+  bottom:  -1rem;
+  position: absolute;
+  visibility: hidden;
+  transition: 0.2s;
+  z-index: 2000;
+}
+.show_create{
+  visibility: visible;
+  right: 1px;
+}
+.bg2{
+  background: var(--bgColor);
+  
+}
+.container_create {
+  max-width: 120rem;
+  margin: 0 auto;
+
+}
+.formulario_create{
+  background-color: var(--colorAccent);
+    width: min(40rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: .5rem;
+}
+.formulario_create fieldset {
+  border: none;
+  box-shadow:var(--sombra);
+}
+.campo__label_create{
+  width: 80%;
+}
+.contenedor_campos_create{
+  padding: 60px;
+}
+  /*label*/
+  
+  .boton_create {
+    padding: 0.7rem 1.2rem;
+    background: var(--colorPrincipal);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    border: none;
+    text-decoration: none;
+  }
+  
+  .boton_create:hover {
+    cursor: pointer;
+  }
+  
+  .enviar .boton {
+    width: 100%;
+    color: #fff;
+  }
+  
+  .campo_create {
+    margin-bottom: 1rem;
+  }
+  
+  .campo__label_create {
+    color: var(--colorTexto);
+    font-weight: bold;
+    display: block;
+  }
+  
+  .campo__field_create {
+  
+    border: none;
+    outline: none;
+    background: var(--colorSecundario);
+    padding: 10px;
+    border-radius: 0.5rem;
+    width: 100%;
+  }
+  
+  .campo__tabla_create {
+    border: none;
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    border-radius: 0.5rem;
+    background: var(--colorSecundario);
+  }
+
+  /*bton crear*/
+  .boton__crear{
+    padding: 0.7rem 1.2rem;
+    background: rgb(25, 106, 212);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: flex;
+   margin-left: 105rem;
+    text-transform: uppercase;
+   width: 10%;
+   height: 90%;
+    border: none;
+    text-decoration: none;
+  }
+/*edidar*/
+.bottom_edit{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.bottom_edit button{
+  border: none;
+  height: 3rem;
+  margin: 0 auto;
+  font-size: 1.5rem; 
+}
+.boton_editar{
+  padding: 0.7rem 1.2rem;
+    background: rgb(25, 106, 212);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+   width: 80%;
+   height: 90%;
+    border: none;
+    text-decoration: none;
+}
+.boton_delete{
+  padding: 0.7rem 1.2rem;
+    background: crimson;
+    color: var(--bgColor);
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+   width: 80%;
+   height: 90%;
+    border: none;
+    text-decoration: none;
+}
+.bottom_edit div{
+    
+  display: grid;
+  align-items: center;
+  text-align: center;
+  margin-left: -2rem;
+  border-radius: 5px;
+}
+.bottom_edit div box-icon{
+  fill: var(--bgColor);
+}
+.bottom_edit div a{
+  color: white;
+  font-weight: 700;
+}
+.bottom_edit div a:hover{
+  color: white;
 }
 
 
@@ -363,14 +615,13 @@ a{
     color: black;
     text-decoration: none;
     text-transform: uppercase;
+    
 }
-a:hover{
-    color: #08a05c;
-}
+
 .menu{
     display: none;
 }
-li{
+.list_item{
     list-style: none;
 }
 
@@ -382,9 +633,33 @@ header ul{
 header ul li{
     padding: 0 1rem;
 }
-header ul li a{
+.link{
     font-weight: bold;
+    position: relative;
+    padding: 5px;
 }
+.link::after{
+  content: "";
+  width: 0;
+  height: 4px;
+  background-color: var(--colorPrincipal);
+  position: absolute;
+  bottom: 0;
+  right: 50%;
+  transition: all .5s;
+  will-change: width;
+}
+.link:hover::after{
+  width: 100%;
+  right: 0;
+  
+}
+.link:hover{
+  color: var(--colorPrincipal);
+}
+
+ 
+
 
 .cart{
     position: relative;
@@ -422,19 +697,41 @@ header ul li a{
     right: 5rem;
     top: 35rem;
 }
+.logo{
+  border: solid 1px #02171d;
+  width: 6.4rem;
+  height: 6.2rem;
+  
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+.logo-img{
+  width: 4.5rem;
+  padding: 0.1rem;
+  align-items: center;
+  text-align: center;
+
+}
 /*----------- PRODUCTOS ------------*/
 
 .shop-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
     gap: 1rem;
+    align-items: center;
   }
 .produ{
+  font-family: "Poppins", sans-serif;
     font-size: 2.4rem;
+    font-weight: 600;
     padding: 10rem 0 0 0;
-    color: #08a05c;
+    color: var(--colorTexto);
+    display: flex;
+    justify-content: center;
 }
 .productos{
+    width: 70%;
     padding: 5rem 3rem;
     margin: 0 auto;
     display: grid;
@@ -485,8 +782,8 @@ header ul li a{
     width: 100%;
     height: 45px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1rem 2rem;
+    grid-template-columns: 1fr 1fr;
+    
 }
 
 .bottom .btn{
@@ -497,19 +794,33 @@ header ul li a{
 }
 .bottom button{
     border: none;
-    max-width: 250px;
-    width: 60%;
+    height: 3rem;
+    width: 100%;
     margin: 0 auto;
     font-size: 1.5rem;
-    color: white;
-    background-color: #fff;
 }
-.icon-comprar{
-    width: 50rem;
+
+.bottom button box-icon{
+  width: 35px;
+    height: 30px;
+    fill: var(--bgColor);
+    
+
 }
-.bottom button:hover{
-    background-color: rgb(155, 155, 155);
+
+.detalle-btn{
+    padding: 0.7rem 1.2rem;
+  background: var(--colorPrincipal);
+  color: var(--bgColor);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+  border: none;
+  text-decoration: none;
+  transition: .5s; 
 }
+
 .bottom div{
     
     display: grid;
@@ -531,11 +842,12 @@ header ul li a{
     position: fixed;
     top: 0;
     left: 0;
+    width: 100%;
     
     height: 100%;
     transition: all 300ms ease-in-out;
     background-color: rgba(0, 0, 0, .6);
-    z-index: 2;
+    z-index: 10000;
     padding-bottom: 5rem;
     visibility: hidden;
 }
@@ -543,7 +855,7 @@ header ul li a{
     position: fixed;
     top: 0;
     
-    right: -1rem;
+    right: -0.7rem;
     width: 360px;
     /* height: 80%; */
     min-height: 100vh;
@@ -577,7 +889,7 @@ header ul li a{
     margin: 3rem 0 0 2rem
 }
 .carrito__close box-icon:hover {
-    fill: crimson;
+    fill: var(--colorPrincipal);
 }
 .carrito__center{
     width: 98%;
@@ -588,7 +900,7 @@ header ul li a{
     grid-template-columns: 1fr 2fr 1fr 1fr;
     width: 100%;
     margin: 2rem auto;
-    box-shadow: 0 1px 10px saddlebrown;
+    box-shadow:  var(--sombra);
     border-radius: 5px;
 }
 .carrito__item div{
@@ -597,11 +909,15 @@ header ul li a{
     align-items: center;
 }
 .carrito__item img{
-    width: 8rem;
+    width: 6rem;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
 }
 .carrito__item h3{
+  display: flex;
     margin-top: 1.5rem;
-    font-family: Helvetica, sans-serif;
+    text-align: center;
+    align-items: center;
     font-weight: 600;
     font-size: 1rem;
 }
@@ -610,10 +926,11 @@ header ul li a{
     font-size: 1.5rem;
     font-weight: bold;
     text-align: start;
-    margin-left: -17rem ;
+    margin-left: -13rem ;
+    margin-top: 1rem;
 }
 .carrito__item box-icon{
-    fill:#08a05c;
+    fill: var(--colorPrincipal);
     width: 30px;
     height: 40px;
     cursor: pointer;
@@ -627,7 +944,7 @@ header ul li a{
 .carrito__item .remove__item box-icon{
     width: 40px;
     height: 80px;
-    fill:  crimson;
+    fill:  var(--colorPrincipal);
     margin-top: 2rem;
 }
 .carrito__footer{

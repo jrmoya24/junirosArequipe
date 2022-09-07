@@ -80,8 +80,7 @@ export const Carrito = () => {
 										</div>
 										<div
 											onClick={() => removeProducto(producto.id)}
-											className="remove__item"
-										>
+											className="remove__item">
 											<box-icon name="trash" />
 										</div>
 									</div>
@@ -94,7 +93,7 @@ export const Carrito = () => {
 
 				<div className="carrito__footer">
 					<h3>Total: ${total}</h3>
-				<Link to={"/Compra"}>	<button className="btn">Payment</button> </Link>
+				<Link to={"/compra/"}>	<button className="btnn">Pagar</button> </Link>
 				</div>
 			</div>
 		</div>

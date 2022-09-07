@@ -5,6 +5,7 @@ import {useAuth0} from '@auth0/auth0-react'
 import { LogoutButton } from "./logout/Logout";
 import { Perfil } from "./perfil/Perfil";
 import { Login2 } from "./login2/Login2";
+import logo from "../images/logo.png"
 
 
 export const Header = () => {
@@ -30,26 +31,26 @@ export const Header = () => {
       </div>
       <Link to="/">
       <div className="logo">
-      <a href="#" class="logo">Juniro's Arequipe</a>
+      <Link to="/"  class="logo"> <img className="logo-img" src={logo} /> </Link>
       </div>
       </Link>
       <ul>
-        <li>
-          <Link to="/">INICIO</Link>
+        <li className="list_item">
+          <Link className="link" to="/">INICIO</Link>
         </li>
-        <li>
-          <Link to="/productos">PRODUCTOS</Link>
+        <li className="list_item">
+          <Link className="link" to="/productos">PRODUCTOS</Link>
         </li>
-        <li>
-          <Link to="/nosotros">NOSOTROS</Link>
+        <li className="list_item">
+          <Link className="link" to="/nosotros">NOSOTROS</Link>
         </li>
-        <li>
-          <Link to="/contacto">CONTACTO</Link>
+        <li className="list_item">
+          <Link className="link" to="/contacto">CONTACTO</Link>
         </li>
       </ul>
       <div className="cart">
-        <box-icon onClick={toogleMenu} name="cart"/>
-        
+       
+        <box-icon onClick={toogleMenu} name='cart-alt' ></box-icon>
 
         
 

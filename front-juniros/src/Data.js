@@ -6,7 +6,7 @@ const data = {
       Title: "Nike LD Waffle Sacai Black Nylon",
       Price: 401,
       category: "nike",
-      
+      Image: require('./images/img04.jpg'),
       Cantidad: 1,
     },
     {
@@ -14,7 +14,7 @@ const data = {
       Title: "Nike Dunk Low Off-White Pine Green",
       Price: 304,
       category: "nike",
-     
+      Image: require('./images/img04.jpg'),
       Cantidad: 1
     },
     {
@@ -22,7 +22,7 @@ const data = {
       Title: "Nike Air Force 1 Low Supreme Black",
       Price: 475,
       category: "nike",
-      
+      Image: require('./images/img04.jpg'),
       Cantidad: 1
     },
     {

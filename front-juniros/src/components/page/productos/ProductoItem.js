@@ -11,6 +11,7 @@ export const ProductoItem = ({title, image, category, price, id}) => {
 
   const value = useContext(DataContext);
   const addCarrito = value.addCarrito;
+  
 
 
 
@@ -28,10 +29,10 @@ export const ProductoItem = ({title, image, category, price, id}) => {
         <p className="price">${price} </p>
       </div>
       <div className="bottom">
-        <button onClick={() => addCarrito(id)}> <box-icon className="icon-comprar" name="cart"/></button>
         <div>
-        <Link to={`/producto/${id}`} className="btnn">Detalles</Link>
+        <Link to={`/producto/${id}`} className="detalle-btn" >Detalles</Link>
         </div>
+        <button className="btnn"  onClick={() => addCarrito(id)}><box-icon name='cart-alt' type='solid' /></button>
       </div>
     </div>
 

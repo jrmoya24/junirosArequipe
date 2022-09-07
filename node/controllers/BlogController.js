@@ -26,12 +26,12 @@ export const getPedido = async ( req, res) => {
 
 //Crear pedido
 export const createPedido = async (req, res) => {
-try {
-    await  BlogModel.create(req.body)
-    res.json({
-        "message":"¡Pedido generado"
-    })
-} catch (error) {
-    res.json ({message: error.message})
-}
+    try {
+        await  BlogModel.bulkCreate(req.body)
+        res.json({
+            "message":"¡Pedido generado"
+        })
+    } catch (error) {
+        res.json ({message: error.message})
+    }
 }

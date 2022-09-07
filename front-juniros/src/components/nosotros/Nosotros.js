@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import nosotros from "../../images/nosotros.JPG"
 
 export default function Nosotros() {
@@ -16,7 +17,7 @@ export default function Nosotros() {
       accusantium dolorem, tempora, ullam temporibus officia fugit perferendis consectetur delectus adipisci magni
       quaerat pariatur optio doloremque. Cumque. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus,
       consequatur?</p>
-    <a href="#" class="btnn">Ver mas</a>
+    <Link to="/nosotros" class="btnn">Ver mas</Link>
   </section>
         </>
     )
