@@ -80,7 +80,7 @@ export const Compra = () => {
         <Typography variant="h4" gutterBottom>
           Informacion de envio.
         </Typography>
-        <form ref={form} >
+        <form ref={form} onSubmit={handleSubmit} >
           <Grid container spacing={3}>
             <Grid item xs={12} sm={6}>
               <div class="campo">
