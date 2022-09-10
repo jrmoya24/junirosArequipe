@@ -10,6 +10,7 @@ const ShowProducts = () => {
     const value = useContext(DataContext);
      const [productos] = value.productos;
      const [showCreate, setshowCreate] = value.showCreate;
+     const logout = value.logout;
 
 
      const handleCreate = () => {
@@ -18,7 +19,8 @@ const ShowProducts = () => {
 
   return (
     <>
-      <h1 className="produ">PRODUCTOS</h1>
+      <button onClick={logout} className="logout-btn">salir</button>
+      <h1 className="produ">PANEL DE ADMINISTRADOR</h1>
       <CreateProduct />
        <div  > <button onClick={handleCreate} className="boton__crear" >Crear producto</button></div>
       <div className="productos">

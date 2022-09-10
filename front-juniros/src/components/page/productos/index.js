@@ -1,6 +1,7 @@
 import React, {useContext} from 'react'
 import { DataContext } from "context/DataProvider";
 import { ProductoItem } from "./ProductoItem";
+import Footer from 'components/footer/Footer';
 
 export const ProductosList = () => {
 	const value = useContext(DataContext)
@@ -22,6 +23,7 @@ export const ProductosList = () => {
 							))
 						}					
         </div>
+		<Footer />
 				</>
     )
 }

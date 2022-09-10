@@ -55,6 +55,7 @@ code {
 }
 .btnn:hover{
   color: var(--bgColor);
+  background: #ff8121bc;
 }
 /*-----------------INICIO-------------------*/
 .home{
@@ -200,9 +201,9 @@ margin-bottom: 1rem;
 
 /*Acceso usuario*/
 .user {
- position: absolute;
+ position: fixed;
  left: 150%;
- top: 5rem;
+ top: 6rem;
  width: 20rem;
   display: flex;
   flex-direction: column;
@@ -219,12 +220,19 @@ margin-bottom: 1rem;
   color: var(--colorTexto);
 }
 .user .login-btn {
-  background: var(--colorPrincipal);
-  color: var(--bgColor);
-  font-size: 1rem;
-  text-transform: uppercase;
-  font-weight: 500;
-  cursor: pointer;
+  padding: 0.7rem 1.2rem;
+    background: var(--colorPrincipal);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    border: none;
+    text-decoration: none;
+    transition: .5s;
+    fill: #fff;
+    width: 60%;
+    margin: 0 2rem;
 }
 .user .login-btn:hover {
   background: var(--colorTexto);
@@ -348,16 +356,43 @@ font-weight: 500;
   /*bton crear*/
   .boton__crear{
     padding: 0.7rem 1.2rem;
-    background: rgb(25, 106, 212);
+    background: #08a05c;
     color: var(--bgColor);
     font-weight: 500;
     display: flex;
    margin-left: 105rem;
     text-transform: uppercase;
+    justify-content: center;
    width: 10%;
    height: 90%;
     border: none;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
     text-decoration: none;
+  }
+  .boton__crear:hover{
+    background: #08a05cdc;
+  }
+  .logout-btn{
+    padding: 0.7rem 1.2rem;
+    background: var(--colorPrincipal);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10rem;
+    left: 105rem;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    border: none;
+    text-decoration: none;
+    transition: .5s;
+    
+    width: 10%;
+    margin: 0 2rem;
+  }
+  .logout-btn:hover{
+    background: #ff8121d2;
   }
 /*edidar*/
 .bottom_edit{
@@ -395,12 +430,12 @@ font-weight: 500;
     text-decoration: none;
 }
 .bottom_edit div{
-    
   display: grid;
   align-items: center;
   text-align: center;
-  margin-left: -2rem;
+
   border-radius: 5px;
+  justify-items: center;
 }
 .bottom_edit div box-icon{
   fill: var(--bgColor);
@@ -429,17 +464,58 @@ font-weight: 500;
     align-items: center;
     margin: 5rem 3rem ;
   }
+  .nosotros-title span{
+    padding: 0.2rem 1.2rem;
+    background: var(--colorPrincipal);
+  color: var(--bgColor);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+  }
   .nosotros-img{
     margin-left: 10%;
     margin-right: 10%;
   }
 
-  /*Contacto*/
-.contacto-title{
+  /*Nosotros pagina*/
+  .nosotros-page-title{
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10rem 5rem 0.1rem;
+    margin: 10rem 3rem ;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  .nosotros-page-title span{
+    padding: 0.2rem 1.2rem;
+    background: var(--colorPrincipal);
+  color: var(--bgColor);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+  }
+  .nosotrosPage{
+    display: flex;
+    column-gap: 3.4rem;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-bottom: 5rem;
+  }
+
+  /*Contacto*/
+.contacto-title{
+  color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 9rem auto 5rem auto;;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+    background:var(--colorPrincipal);
+    width: 35%;
   }
   .contacto-title2{
     display: flex;
@@ -492,10 +568,13 @@ font-weight: 500;
     clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
     border: none;
     text-decoration: none;
+    transition: 0.5s;
   }
+
   
   .boton:hover {
     cursor: pointer;
+    background: #ff8121da;
   }
   
   .enviar .boton {
@@ -533,15 +612,22 @@ font-weight: 500;
   }
 /*OFERTAS*/
 .ofertas-title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10rem 3rem ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  background: #ff812185;
+  width: 40%;
+  border: solid 1px #000;
+  border-radius: 10px;
+
 }
 /*FOOTER*/
 .footer{
     width: 100%;
-    background: #0a141d;
+    background: #222222;
   }
   .footer .grupo1{
     width: 100%;
@@ -583,19 +669,28 @@ font-weight: 500;
     border-bottom: 1px solid transparent;
   
   }
+  footer .logo-footer{
+    width: 10rem;
+  }
   footer .grupo1 .box a:hover{
     color: var(--bgColor);
     border-bottom: 1px solid var(--bgColor);
   }
   footer .grupo2{
-    background: #0a1a2a;
-    padding: 15px 10px;
+    background: var(--colorPrincipal);
+    padding: 10px 10px;
     text-align: center;
     color: var(--bgColor);
   }
   .icon-redes_{
     display: flex;
     justify-content: center;
+    margin-left: 2rem;
+  }
+  footer .icon-redes_ box-icon {
+    width: 35px;
+    height: 35px;
+    fill: #fff;
   }
 /* ----------------- HEADER -------------------*/
 header{
@@ -606,10 +701,13 @@ header{
     z-index: 1000;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
     padding: 20px 100px;
     transition: 0.5s linear;
     background: transparent;
+}
+.header-active{
+  background: var(--bgColor);
 }
 a{      
     color: black;
@@ -657,6 +755,17 @@ header ul li{
 .link:hover{
   color: var(--colorPrincipal);
 }
+.icon-redes  box-icon {
+  border-bottom: solid 1px transparent;
+  transition: .2s;
+}
+.icon-redes  box-icon:hover{
+border-bottom: solid 1px  var(--bgColor);
+}
+
+.icon-header{
+  padding-right: 2rem;
+}
 
  
 
@@ -664,6 +773,7 @@ header ul li{
 .cart{
     position: relative;
     cursor: pointer;
+    display: flex;
 }
 .cart box-icon{
     width: 38px;
@@ -674,7 +784,7 @@ header ul li{
 .cart span{
     position: absolute;
     top: -1rem;
-    right: 1.5rem;
+    left: 1.3rem;
     width: 1.8rem;
     height: 1.8rem;
     display: flex;
@@ -720,9 +830,16 @@ header ul li{
     grid-template-columns: repeat(auto-fit, minmax(25rem, auto));
     gap: 1rem;
     align-items: center;
-  }
+    background: var(--bgColor);
+    box-shadow: var(--sombra);
+    transition: all 0.25s;
+}
+.shop-content:hover{
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgb(0 0 0 / 0.2);
+}
 .produ{
-  font-family: "Poppins", sans-serif;
+  
     font-size: 2.4rem;
     font-weight: 600;
     padding: 10rem 0 0 0;
@@ -757,7 +874,9 @@ header ul li{
   height: auto;
   margin-bottom: 0.5rem;
   padding: 10px;
+  transition: .1s;
 }
+
 .producto__footer{
     padding: 1rem;
 }
@@ -779,10 +898,10 @@ header ul li{
     color: #1a202c;
 }
 .productos .bottom{
-    width: 100%;
-    height: 45px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 2.5rem;
     
 }
 
@@ -809,7 +928,7 @@ header ul li{
 }
 
 .detalle-btn{
-    padding: 0.7rem 1.2rem;
+  padding: 0.7rem 1.2rem;
   background: var(--colorPrincipal);
   color: var(--bgColor);
   font-weight: 500;
@@ -819,6 +938,9 @@ header ul li{
   border: none;
   text-decoration: none;
   transition: .5s; 
+}
+.detalle-btn:hover{
+  background: #ff8121bb;
 }
 
 .bottom div{
@@ -981,9 +1103,10 @@ header ul li{
     font-size: 3.5rem;
     width: 100%;
     max-width: 1000px;
-    margin: 0 auto;
-    font-family:Helvetica, sans-serif;
+    margin: 2rem 0;
     color: #1a202c;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 .detalles .price{
     font-size: 2.5rem;
@@ -991,17 +1114,26 @@ header ul li{
     color: #08a05c;
 }
 .detalles button{
-    max-width: 300px;
-    margin: 1rem 0 0 0;
-    padding: 1rem 1rem;
+  
+    
+    padding: 0.7rem 1.2rem;
+    background: var(--colorPrincipal);
+    color: var(--bgColor);
+    font-weight: 500;
+    display: inline-block;
+    text-transform: uppercase;
+    clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
     border: none;
-    outline: 0;
-    background-color: #3033d3;
-    font-size: 1.6rem;
-    color: white;
-    font-weight: 600;
-    border-radius: 8px;
-    cursor: pointer;
+    text-decoration: none;
+    transition: .5s;
+    fill: #fff;
+    width: 10%;
+    margin: 0 2rem;
+  }
+
+
+.detalles button:hover{
+  background: #ff8121bb;
 }
 .detalles .grid{
     display: grid;
@@ -1034,9 +1166,12 @@ header ul li{
     cursor: pointer;
 }
 .detalles img{
+  display: flex;
     min-height: 300px;
+    margin: 5rem 35rem;
+    width: 40rem;
     object-fit: contain;
-    margin-top:  -7rem;
+   
     z-index: -1;
 }
 .detalles input{
@@ -1061,6 +1196,7 @@ header ul li{
 
 
 
+
 /* ------------- RELACIONADO --------- */
 .relacionados{
     text-align: center;
@@ -1075,6 +1211,26 @@ header ul li{
     text-transform: uppercase;
     font-family: Helvetica, sans-serif
     ;
+}
+
+/*compra*/
+.compra-btn{
+  padding: 0.7rem 1.2rem;
+  background: var(--colorPrincipal);
+  color: var(--bgColor);
+  font-weight: 500;
+  display: inline-block;
+  text-transform: uppercase;
+  clip-path: polygon(100% 0, 93% 50%, 86% 99%, 0% 100%, 7% 47%, 13% 0%);
+  border: none;
+  text-decoration: none;
+  transition: .5s;
+  fill: #fff;
+  width: 30%;
+  margin: 0 1rem;
+}
+.compra-btn:hover{
+  background: #ff8121bb;
 }
 
 

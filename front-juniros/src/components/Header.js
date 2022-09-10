@@ -1,10 +1,7 @@
 import React, { useContext} from "react";
 import { DataContext } from "context/DataProvider";
 import { Link } from "react-router-dom";
-import {useAuth0} from '@auth0/auth0-react'
-import { LogoutButton } from "./logout/Logout";
-import { Perfil } from "./perfil/Perfil";
-import { Login2 } from "./login2/Login2";
+
 import logo from "../images/logo.png"
 
 
@@ -29,34 +26,35 @@ export const Header = () => {
       <div className="menu">
       <box-icon name="menu"></box-icon>
       </div>
-      <Link to="/">
+      <Link to=".">
       <div className="logo">
-      <Link to="/"  class="logo"> <img className="logo-img" src={logo} /> </Link>
+      <Link to="."  class="logo"> <img className="logo-img" src={logo} /> </Link>
       </div>
       </Link>
       <ul>
         <li className="list_item">
-          <Link className="link" to="/">INICIO</Link>
+          <Link className="link" to=".">INICIO</Link>
         </li>
         <li className="list_item">
-          <Link className="link" to="/productos">PRODUCTOS</Link>
+          <Link className="link" to="../productos">PRODUCTOS</Link>
         </li>
         <li className="list_item">
-          <Link className="link" to="/nosotros">NOSOTROS</Link>
+          <Link to="../nosotros" className="link" >NOSOTROS</Link>
         </li>
         <li className="list_item">
-          <Link className="link" to="/contacto">CONTACTO</Link>
+          <Link className="link" to="./contacto">CONTACTO</Link>
         </li>
       </ul>
       <div className="cart">
-       
-        <box-icon onClick={toogleMenu} name='cart-alt' ></box-icon>
-
-        
-
-        
-          
-         <box-icon onClick={handleLogin} name="user" /> 
+       <div className="icon-header">
+          <box-icon onClick={toogleMenu} name='cart-alt' ></box-icon>
+          <box-icon onClick={handleLogin} name="user" /> 
+         </div>
+         <div class="icon-redes">
+              <a href="https://www.facebook.com/Juniros-Arequipe-108802061960917" target="_blank"> <box-icon className="icon-fb" type='logo' name='facebook-square'/> </a>
+              <a href="https://www.instagram.com/junirosarequipe/" target="_blank"> <box-icon name='instagram' type='logo' className="icon-inst" /> </a>
+              <a href="https://wa.me/message/JZFWE2CJVWUCB1" target="_blank"> <box-icon name='whatsapp' type='logo' className="icon-what"/> </a>
+           </div>
         
         <span className="item__total"> {carrito.length} </span>
         

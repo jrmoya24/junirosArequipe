@@ -2,6 +2,7 @@ import React, {useContext, useEffect, useState} from 'react'
 import { DataContext } from "context/DataProvider";
 import { useParams } from "react-router-dom";
 import { ProductoItem } from "./ProductoItem";
+import Footer from 'components/footer/Footer';
 
 export const ProductosDetalles = () => {
   const value = useContext(DataContext);
@@ -43,19 +44,19 @@ export const ProductosDetalles = () => {
     {
         <div className="detalles">
           <h2>{detalle.title}</h2>
-          <p className="price">${detalle.price}</p>
+          <p className="price">Precio: ${detalle.price}</p>
           <div className="grid">
-          <p className="nuevo">Nuevo</p>
+          
           
           </div>
           <button onClick={() => addCarrito(detalle.id)}>
-            Añadir al carrito
+          <box-icon name='cart-alt' type='solid' className="icon-add"/>
           </button>
           
           {
-            url ? <img src={images} alt={detalle.title}/> : <img src={detalle.image} alt={detalle.title}/>
+            url ? <img src={images} alt={detalle.title}/> : <img  src={detalle.image} alt={detalle.title}/>
           }
-          <input type="range" min="1" max="36" step="1" value={url} onChange={handleInput} />
+          
           <div className="description">
           <p><b>description: </b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum necessitatibus soluta alias porro, saepe facere expedita asperiores quos fugit inventore ex, itaque sapiente quae pariatur beatae optio repellat aperiam quia possimus mollitia repellendus? Illo natus quam eaque impedit omnis pariatur!</p>
           <br/>
@@ -69,7 +70,7 @@ export const ProductosDetalles = () => {
     <div className="productos">
       {
         productos.map((producto)=>{
-          if((item < 6)&&(detalle.category === producto.category)){
+          if((item < 3)&&(detalle.category === producto.category)){
             item++;
           return <ProductoItem 
           key={producto.id}
@@ -86,6 +87,7 @@ export const ProductosDetalles = () => {
       }
      
     </div>
+    <Footer />
     </>
   )
 }

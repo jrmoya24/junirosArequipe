@@ -4,7 +4,7 @@ import Typography from "@mui/material/Typography";
 import { DataContext } from "context/DataProvider";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-import Swal from 'sweetalert2'
+//import Swal from 'sweetalert2'
 
 
 //const URI = "http://localhost:8000/compra/";
@@ -15,46 +15,46 @@ export const Compra = () => {
   const [total] = value.total;
 
 
-  const [producto, setProducto] = useState({
-    title: '',
-    price: '',
-    cantidad: 0
+  const [infoPedido, setinfoPedido] = useState({
+    user_name: '',
+    user_email: '',
+    user_address: '',
+    user_city: '',
+    user_barrio: ''
   })
 
 
-//const obj = Object.assign({}, carrito);
-//console.log ( JSON.stringify (value.carrito))
-//console.log(carrito);
-  
 
-  const mostrarAlerta =  () =>  {
-    
-    Swal.fire({
-      title: 'Se ha generado su pedido',
-      text: 'En un tiempo estimado de 30 min, nos estaremos comunicando.',
-      icon: 'success',
-      button: 'Aceptar'
-    })
-    
+  const changeInput = ({ target }) => {
+    const { name, value } = target
+   setinfoPedido({
+    ...infoPedido,
+    [name] : value
+   })
   }
-  
-// Procedimiento enviar datos a la base de datos
-  const handleSubmit =async(e)=>{
+
+
+  // Procedimiento enviar datos a la base de datos
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
     await axios.post("http://localhost:8000/compra/", carrito)
-    .then(response=>{
-      console.log(response);
-      console.log(response.data);
-    })
-
-      //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
+    
+      .then(response => {
+        console.log(response);
+        console.log(response.data);
+      })
+      sendEmail()
+      e.target.reset();
+    //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
   }
-  
-  
+
+
 
   const form = useRef();
   const sendEmail = (e) => {
-    e.preventDefault();
+    
 
     emailjs
       .sendForm(
@@ -85,14 +85,14 @@ export const Compra = () => {
             <Grid item xs={12} sm={6}>
               <div class="campo">
                 <label class="campo__label" id="userName" htmlFor="NomForm">
-                  Nombre:
-                </label>
+                  Nombre: </label>
                 <input
                   class="campo__field"
                   type="text"
                   name="user_name"
                   placeholder="Ingrese su nombre"
                   id="nombre"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -107,6 +107,7 @@ export const Compra = () => {
                   name="user_num"
                   placeholder="Ingrese su telefono"
                   id="telefono"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -118,9 +119,10 @@ export const Compra = () => {
                 <input
                   class="campo__field"
                   type="email"
-                  name="user_email"
                   placeholder="Correo"
+                  name="user_email"
                   id="correo"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -139,6 +141,7 @@ export const Compra = () => {
                   name="user_address"
                   placeholder="Ingrese su direccion"
                   id="direccion"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -154,6 +157,7 @@ export const Compra = () => {
                   name="user_city"
                   placeholder="Ciudad"
                   id="ciudad"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -172,6 +176,7 @@ export const Compra = () => {
                   name="user_barrio"
                   placeholder="Barrio"
                   id="Barrio"
+                  onChange={changeInput}
                 />
               </div>
             </Grid>
@@ -218,7 +223,7 @@ export const Compra = () => {
               </table>
             </div>
             <Grid item xs={12} sm={8}>
-              <button type="submit" > Comprar </button>
+              <button type="submit" className="compra-btn" > Comprar </button>
             </Grid>
           </Grid>
         </form>

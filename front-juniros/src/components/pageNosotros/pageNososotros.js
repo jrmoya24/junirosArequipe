@@ -1,15 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import nosotros from "../../images/nosotros.JPG";
+import React from 'react'
+import nosotrosImg from '../../images/nosotros.JPG';
 
-export default function Nosotros() {
+export const PageNososotros = () => {
   return (
     <>
-      <h2 id="nosotros" class="nosotros-title">
-        Sobre <span>nosotros</span> 
+    <h2 id="nosotros" class="nosotros-page-title">
+        Sobre  <span>nosotros</span> 
       </h2>
-      <section class="nosotros">
-        <img src={nosotros} alt="" class="nosotros-img" />
+      <section class="nosotrosPage">
+        <img src={nosotrosImg} alt="" class="nosotros-img" />
         <p class="nosotros-text">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, totam
           non. Magni suscipit mollitia iusto magnam! Impedit consectetur
@@ -24,10 +23,9 @@ export default function Nosotros() {
           pariatur optio doloremque. Cumque. Lorem ipsum dolor sit amet,
           consectetur adipisicing elit. Ducimus, consequatur?
         </p>
-        <Link to="/nosotros" class="btnn">
-          Ver mas
-        </Link>
-      </section>
+        </section>
+    
+    
     </>
-  );
+  )
 }
