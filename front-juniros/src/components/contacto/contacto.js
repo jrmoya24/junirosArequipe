@@ -1,6 +1,9 @@
 import React, { useState, useRef } from "react";
 import axios from "axios";
 import emailjs from "@emailjs/browser";
+import Swal from 'sweetalert2'
+import { Mapa } from "components/mapa/Mapa";
+
 
 
 export default function Contacto() {
@@ -31,6 +34,8 @@ export default function Contacto() {
     
     sendEmail();
     e.target.reset();
+    alertCon()
+    
       //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
   }
 
@@ -55,7 +60,17 @@ export default function Contacto() {
         }
       );
   };
+const alertCon = () => {
 
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Mensaje enviado correctamente',
+    text : 'En lo mas pronto posible estara recibiendo respuesta al correo registrado.',
+    showConfirmButton: false,
+    timer: 3000
+  })
+}
   
   return (
     <div id="contacto" class="contacto">
@@ -69,7 +84,7 @@ export default function Contacto() {
                   <div class="campo">
                     <label class="campo__label" for="nombre">
                       Nombre:
-                    </label>
+                      </label>
                     <input
                       class="campo__field"
                       type="text"
@@ -77,12 +92,14 @@ export default function Contacto() {
                       id="nombre"
                       name="nombre"
                       onChange={inputChange}
+                      required
                     />
+                    
                   </div>
                   <div class="campo">
                     <label class="campo__label" for="nombre">
                       Telefono:
-                    </label>
+                      </label>
                     <input
                       class="campo__field"
                       type="number"
@@ -90,7 +107,9 @@ export default function Contacto() {
                       id="telefono"
                       name="telefono"
                       onChange={inputChange}
+                      required
                     />
+                    
                   </div>
                   <div class="campo">
                     <label class="campo__label" for="email">
@@ -103,6 +122,7 @@ export default function Contacto() {
                       id="email"
                       name="correo"
                       onChange={inputChange}
+                      required
                     />
                   </div>
 
@@ -118,6 +138,7 @@ export default function Contacto() {
                       placeholder="Ingrese su mensaje"
                       name="mensaje"
                       onChange={inputChange}
+                      required
                     ></textarea>
                   </div>
                   <div class="enviar">
@@ -141,9 +162,11 @@ export default function Contacto() {
                 </div>
               </fieldset>
             </form>
+          <Mapa/>
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

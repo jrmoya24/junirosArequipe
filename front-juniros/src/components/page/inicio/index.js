@@ -17,10 +17,9 @@ export default function Inicio() {
     <div>
       <section className="home" id="home">
         <div className="home-text">
-          <span>Una delicia en tu paladar</span>
+          <span>“Dulce de leche artesanal”</span>
           <h1>
-            Nueva llegada de <br />
-            productos frescos
+          Perseguir la perfección, <br/> Atrapar la excelencia.
           </h1>
           <Link to="/productos" href="#" className="btnn">
             Compra ahora

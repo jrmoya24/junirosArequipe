@@ -17,8 +17,7 @@ export default function Footer() {
                     </div>
                     <div class="box">
                         <h2>SOBRE NOSOTROS</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorum incidunt fuga molestiae ab impedit amet
-                            corrupti aliquam vero sequi ratione.</p>
+                        <p>Como empresa queremos satisfacer a nuestros clientes en sus momentos más dulces, creando así la opción de poder entregar regalos.</p>
 
                         <Link to="/nosotros">Mas sobre nosotros</Link> <br />
                         <Link to="/contacto">Contactanos</Link>k  <br />
@@ -34,7 +33,7 @@ export default function Footer() {
                 </div>
 
                 <div class="grupo2">
-                    <small> &copy; 2022 <b>By Juniro's Arequipe | SENA </b> Todos los derechos reservados</small>
+                    <small> &copy; 2022 <b>By Juniro's Arequipe | SENA </b> Todos los derechos reservados.</small>
                 </div>
             </footer>
         </>

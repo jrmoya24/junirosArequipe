@@ -8,7 +8,8 @@ export default function Slider() {
       <div
         id="carouselExampleControls"
         class="carousel slide"
-        data-bs-ride="carousel">
+        data-bs-ride="carousel"
+        data-interval="2000">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src={banner} class="d-block w-100" alt="..."></img>

@@ -6,23 +6,18 @@ export default function Nosotros() {
   return (
     <>
       <h2 id="nosotros" class="nosotros-title">
-        Sobre <span>nosotros</span> 
+        Sobre <span>nosotros</span>
       </h2>
       <section class="nosotros">
         <img src={nosotros} alt="" class="nosotros-img" />
         <p class="nosotros-text">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit, totam
-          non. Magni suscipit mollitia iusto magnam! Impedit consectetur
-          inventore velit, exercitationem, explicabo accusantium reiciendis
-          optio animi libero saepe alias facilis. Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Aut cum impedit excepturi ab delectus at
-          autem possimus consequuntur, cupiditate nihil aliquid obcaecati quia
-          perferendis, dicta natus! Quibusdam pariatur deleniti tenetur. Lorem
-          ipsum dolor sit amet consectetur adipisicing elit. Voluptatum commodi
-          quod doloribus iure accusantium dolorem, tempora, ullam temporibus
-          officia fugit perferendis consectetur delectus adipisci magni quaerat
-          pariatur optio doloremque. Cumque. Lorem ipsum dolor sit amet,
-          consectetur adipisicing elit. Ducimus, consequatur?
+          Juniro’s Arequipe es una micro empresa creada por la necesidad de
+          generar empleo a nivel familiar, inicialmente se eligió este producto
+          por el conocimiento que se tenia sobre este elemento, en cuanto a la
+          creación, producción y comercio. <br/>
+          <br/>
+          Juniro’s Arequipe se dedica a comercializar frascos rellenos de arequipe, de diferentes tamaños y
+          presentaciones, así mismo varían los precios de cada uno de estos.
         </p>
         <Link to="/nosotros" class="btnn">
           Ver mas

@@ -1,8 +1,8 @@
 import axios from "axios";
 import { DataContext } from "context/DataProvider";
 import { useEffect, useState, useContext } from "react";
-
 import {  Link, useParams } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 
 export default function EditProduct() {
@@ -29,7 +29,7 @@ export default function EditProduct() {
       cantidad: cantidad,
     })
 
-    
+    alertCon()
   };
 
   useEffect(() => {
@@ -47,13 +47,27 @@ export default function EditProduct() {
     setCantidad(res.data.cantidad);
   };
 
+  const alertCon = () => {
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Producto editado correctamete.',
+      showConfirmButton: false,
+      timer: 2000
+    })
+  }
+
   const vistaedit = showEdit ? "showEdit show_edit" : "showEdit";
 
   return (
+
     <div className={(showEdit, vistaedit)}>
       <div class="bg2">
         <div class="container_create">
-          <form class="formulario_create" onSubmit={update}>
+      
+          <form class="formulario_editar" onSubmit={update}>
+          <h2 className="editar-title">Editar producto</h2>
             <fieldset>
               <div class="contenedor_campos_create">
                 <div class="campo">
@@ -129,9 +143,9 @@ export default function EditProduct() {
                   />
                 </div>
 
-                <div class="enviar">
-                  <button type="submit" class="boton_editar">Editar</button> 
-                  <Link to="/productos/admin/"  class="boton_regresar "> Regresar</Link>
+                <div class="ctn-editar">
+                  <button type="submit" className="boton_editar">Editar</button> 
+                  <Link to="/productos/admin/"  className="boton_regresar "> Regresar</Link>
                 </div>
                 
               </div>

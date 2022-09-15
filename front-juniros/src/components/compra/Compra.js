@@ -4,7 +4,8 @@ import Typography from "@mui/material/Typography";
 import { DataContext } from "context/DataProvider";
 import emailjs from "@emailjs/browser";
 import axios from "axios";
-//import Swal from 'sweetalert2'
+import Swal from 'sweetalert2'
+
 
 
 //const URI = "http://localhost:8000/compra/";
@@ -14,14 +15,7 @@ export const Compra = () => {
   const [carrito, setCarrito] = value.carrito;
   const [total] = value.total;
 
-
-  const [infoPedido, setinfoPedido] = useState({
-    user_name: '',
-    user_email: '',
-    user_address: '',
-    user_city: '',
-    user_barrio: ''
-  })
+ const [infoPedido, setinfoPedido] = value.infoPedido;
 
 
 
@@ -35,7 +29,7 @@ export const Compra = () => {
 
 
   // Procedimiento enviar datos a la base de datos
-
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -47,6 +41,7 @@ export const Compra = () => {
       })
       sendEmail()
       e.target.reset();
+      alertCon();
     //console.log("esto es lo que hay en BSSS " +  JSON.stringify(value.carrito) );
   }
 
@@ -73,6 +68,16 @@ export const Compra = () => {
         }
       );
   };
+  const alertCon = () => {
+
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'Pedido generado correctamete',
+      text: 'Nos estaremos comunicando con usted, en un tiempo estimado de 30 minutos.',
+      showConfirmButton: false,
+    })
+  }
 
   return (
     <div>
@@ -93,6 +98,7 @@ export const Compra = () => {
                   placeholder="Ingrese su nombre"
                   id="nombre"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -108,6 +114,7 @@ export const Compra = () => {
                   placeholder="Ingrese su telefono"
                   id="telefono"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -123,6 +130,7 @@ export const Compra = () => {
                   name="user_email"
                   id="correo"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -142,6 +150,7 @@ export const Compra = () => {
                   placeholder="Ingrese su direccion"
                   id="direccion"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -158,6 +167,7 @@ export const Compra = () => {
                   placeholder="Ciudad"
                   id="ciudad"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -177,6 +187,7 @@ export const Compra = () => {
                   placeholder="Barrio"
                   id="Barrio"
                   onChange={changeInput}
+                  required
                 />
               </div>
             </Grid>
@@ -206,6 +217,7 @@ export const Compra = () => {
                         <td> {producto.title} </td>
                         <td> $ {producto.price} </td>
                         <td> {producto.cantidad} </td>
+                        <td> </td>
                       </tr>
                     );
                   })}
@@ -223,11 +235,12 @@ export const Compra = () => {
               </table>
             </div>
             <Grid item xs={12} sm={8}>
-              <button type="submit" className="compra-btn" > Comprar </button>
+              <button type="submit" className="compra-btn" >Generar solicitud</button>
             </Grid>
           </Grid>
         </form>
       </div>
+     
     </div>
   );
 };

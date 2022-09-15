@@ -4,10 +4,7 @@ import db from "../database/db.js";
 import {  DataTypes } from "sequelize";
 
 
-// importamos conexion de la BD
-import db from "../database/db.js";
-//Importamos Sequilize
-import {  DataTypes } from "sequelize";
+
 
 
 const DatosPedidoModel = db.define('datospedido',{

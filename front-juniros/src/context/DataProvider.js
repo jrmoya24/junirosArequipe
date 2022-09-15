@@ -1,6 +1,8 @@
 import React, { createContext, useState, useEffect, useCallback } from "react";
 import axios from "axios";
-//import Data from "Data2.js";
+import Swal from 'sweetalert2'
+
+//En el context estan las funciones que se utilizan en todo el aplicativo
 
 export const DataContext = createContext();
 const MY_AUTH_APP = "MY_AUTH_APP_";
@@ -13,17 +15,24 @@ export const DataProvider = (props) => {
   const [total, setTotal] = useState(0);
   const [showCreate, setShowCreate] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
+  const [infoPedido, setinfoPedido] = useState({
+    user_name: '',
+    user_email: '',
+    user_address: '',
+    user_city: '',
+    user_barrio: ''
+  })
 
   //Autentificacion de administrador
   const [isAuthenticated, setIsAuthenticated] = useState(
     window.localStorage.getItem(MY_AUTH_APP) ?? false
   );
-
+//vista del acceso del administrador
   const login = useCallback(function () {
     window.localStorage.setItem(MY_AUTH_APP, true);
     setIsAuthenticated(true);
   }, []);
-
+//vista del salir del administrador
   const logout = useCallback(function () {
     window.localStorage.removeItem(MY_AUTH_APP);
     setIsAuthenticated(false);
@@ -41,6 +50,17 @@ export const DataProvider = (props) => {
   useEffect(() => {
     setData();
   }, []);
+
+  // Alerta 
+  const alertErr = () =>{
+
+    Swal.fire({
+      icon: 'error',
+      title: 'Oops...',
+      text: 'Este producto ya se ha añadido al carrito, revisalo.',
+      timer: 4000
+    })
+  }
   // Añadir productos al carrito
   const addCarrito = (id) => {
     const check = carrito.every((item) => {
@@ -52,7 +72,7 @@ export const DataProvider = (props) => {
       });
       setCarrito([...carrito, ...data]);
     } else {
-      alert("El producto se ha añadido al carrito");
+      alertErr();
     }
   };
   // Solicitar productos guardados en el carrito en localStorage
@@ -76,7 +96,7 @@ export const DataProvider = (props) => {
     };
     getTotal();
   }, [carrito]);
-  // valores a exportar
+  // valores de las funciones a exportar
   const value = {
     productos: [productos, setProductos],
     menu: [menu, setMenu],
@@ -85,6 +105,7 @@ export const DataProvider = (props) => {
     showCreate: [showCreate, setShowCreate],
     showEdit: [showEdit, setShowEdit],
     carrito: [carrito, setCarrito],
+    infoPedido: [infoPedido, setinfoPedido],
     addCarrito: addCarrito,
     getProducts: getProducts,
     URI: URI,

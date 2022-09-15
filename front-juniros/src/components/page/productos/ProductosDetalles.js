@@ -70,7 +70,7 @@ export const ProductosDetalles = () => {
     <div className="productos">
       {
         productos.map((producto)=>{
-          if((item < 3)&&(detalle.category === producto.category)){
+          if((item < 2)&&(detalle.category === producto.category)){
             item++;
           return <ProductoItem 
           key={producto.id}
